@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html style="overflow: hidden;">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap" rel="stylesheet">
+    <title>AceWay</title>
+    <style>
+      @keyframes about {
+        0% {
+          margin-left: 0px;
+          border-top-right-radius: 40px;
+          border-bottom-right-radius: 40px;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+        }
+        100% {
+          margin-left: calc(100vw - 35%);
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+          border-top-left-radius: 40px;
+          border-bottom-left-radius: 40px;
+        }
+      }
+
+      @keyframes ourfleet {
+        0% {
+          margin-left: calc(100vw - 35%);
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+          border-top-left-radius: 40px;
+          border-bottom-left-radius: 40px;
+        }
+        100% {
+          margin-left: 0px;
+          border-top-right-radius: 40px;
+          border-bottom-right-radius: 40px;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+        }
+      }
+    p:hover {
+    color: #e60f0f;
+    }
+    p {
+    color: #000000;
+    }
+    button:hover {
+    color: #e60f0f;
+    }
+    button {
+    color: black;
+    }
+    </style>
+  </head>
+  <body style="margin: 0px;">
+    <div style="position: fixed; top: 0px; left: 0px; width: 100vw; height: 50px; background-color: transparent;">
+      <center>
+        <button onclick="ourfleetTransition()" id="ourfleet" style="font-size: 20px; height: 30px; margin-top: 10px; width: 150px; border: none; border-bottom: 2px solid #e60f0f; font-family: open sans; margin-right: 20px; outline: none;background-color: transparent;">Our Fleet</button>
+        <button id="aboutusnav" onclick="aboutusTransition()" style="font-size: 20px; height: 30px; margin-top: 10px; width: 150px; border: none; border-bottom: 2px solid transparent; background-color: transparent;font-family: open sans; margin-left: 20px; outline: none;">About Us</button>
+      </center>
+    </div>
+    <div id="background-image" style="border-radius: 10px; position: absolute; z-index: -1; top: 50px; left: 0px; background-image: url(our-fleet.png); background-size: cover; width: 100vw; height: calc(100vh - 50px)"></div>
+    <div style="margin-top: 80px; width: 100vw; height: calc(100vh - 50px); overflow: scoll;">
+      <div id="infoBox" style="width: calc(35% - 80px); height: calc(100% - 150px); box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); border-top-right-radius: 40px; background-color: white; border-bottom-right-radius: 40px; padding: 40px; margin: 0px; float: left;">
+        <img src="AceAirlines.png" style="width: 40%">
+        <h1 id="header" style="font-size: 20px; margin-bottom: 20px; font-weight: 800; font-family: open sans;">Safety, Service, Standard</h1>
+        <div style="width: 30%; height: 2px; border: none; background-color: #000000; margin: 0px; margin-bottom: 20px;"></div>
+        <p id="infoText" style="width: 100%; height: auto; font-family: open sans;font-size: 13px; color: black;">Welcome to our fleet. Safety is out priority. That is our goal. We want to supply inexpensive and quality flights to Ace Airlines customers. Click the button below to learn more about the Ace Airline fleet.</p>
+        <button id="redirect" onclick="parent.location = ('https://flyaceairline.weebly.com/our-fleet.html')" style="outline: none; padding: 13px; border-radius: 50px; margin-top: 13px; border: 1.5px solid #e60f0f; padding-left: 20px; padding-right: 20px; <color: #e60f0f; font-family: open sans; font-size: 11px;">Learn more about our fleet<img src="arrow-small.png" style="margin-left: 10px; height: 11px;"></button>
+      </div>
+    </div>
+    <script>
+      function aboutusTransition() {
+        document.getElementById('infoBox').style.animation = 'about 1s forwards'
+        document.getElementById('infoText').textContent = "Here at Ace Airlines, we make it our goal for you to have the best experience possible, and all for a low price. We do this for every customer, every flight, every day."
+        document.getElementById('redirect').textContent = "Learn more about Ace Airlines"
+        document.getElementById('header').textContent = "You matter to us."
+        document.getElementById('header').style.fontSize = "25px"
+        document.getElementById('redirect').setAttribute('onclick', 'parent.location = "https://flyaceairline.weebly.com/about.html"')
+        document.getElementById('ourfleet').style.borderBottom = "2px solid transparent"
+        document.getElementById('aboutusnav').style.borderBottom = "2px solid #e60f0f"
+        document.getElementById('background-image').style.backgroundImage = "url(about-us.png)"
+       
+      }
+
+      function ourfleetTransition() {
+        document.getElementById('infoBox').style.animation = 'ourfleet 1s forwards'
+        document.getElementById('infoText').textContent = "Welcome to our fleet. Safety is out priority. That is our goal. We want to supply inexpensive and quality flights to Ace Airlines customers. Click the button below to learn more about the Ace Airline fleet."
+        document.getElementById('redirect').textContent = "Learn more about our fleet"
+        document.getElementById('header').textContent = "Safety, Service, Standard"
+        document.getElementById('header').style.fontSize = "20px"
+        document.getElementById('redirect').setAttribute('onclick', 'parent.location = "https://flyaceairline.weebly.com/our-fleet.html"')
+        document.getElementById('ourfleet').style.borderBottom = "2px solid #e60f0f"
+        document.getElementById('aboutusnav').style.borderBottom = "2px solid transparent"
+        document.getElementById('background-image').style.backgroundImage = "url(our-fleet.png)"
+        
+      }
+    </script>
+  </body>
+</html>
